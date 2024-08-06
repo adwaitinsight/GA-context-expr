@@ -1,0 +1,13 @@
+on: [push]
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    env: 
+      VAR1: "earth"
+    steps: 
+      - name: access var1
+        run: echo "value is $VAR1"
+      - name: print github context
+        run: |
+          echo "Repository ${{github.repository}}"
+          echo "Repository ${{github.workflow}}"
